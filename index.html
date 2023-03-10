@@ -7,84 +7,96 @@
     <title>Document</title>
 </head>
 <body>
-<script>
 
-// functions to select computer weapon
-function getComputerChoice (){
-    let selection = ["Rock", "Paper", "Scissors"]
-    return selection[Math.floor(Math.random() * 3)];
-}
+    <button class = "rock">Rock</button>
+    <button class = "paper">Paper</button>
+    <button class = "scissor">Scissor</button>
 
-function playRound(){
-    
-    let playerSelection = prompt("Please enter your name", "Harry Potter");
-    let getComputerSelection = getComputerChoice().toLowerCase();
+    <script>
 
-    if (playerSelection == "rock" && getComputerSelection == "scissors"){
-        console.log("You win, rock beats scissors");
-        return 1;
-    }
-    
-    if (playerSelection == "scissors" && getComputerSelection == "rock"){
-        console.log("You lose, rock beats scissors");
-        return 0;
+
+    let selector = document.getElementsByTagName("button");
+
+
+    // functions to select computer weapon
+    function getComputerChoice (){
+        let selection = ["rock", "paper", "scissors"]
+        return selection[Math.floor(Math.random() * 3)];
     }
 
-    if (playerSelection == "paper" && getComputerSelection == "rock"){
-        console.log("You win, paper beats rock");
-        return 1;
-    }
 
-    if (playerSelection == "rock" && getComputerSelection == "paper"){
-        console.log("You lose, paper beats rock");
-        return 0;
-    }
 
-    if (playerSelection == "scissors" && getComputerSelection == "paper"){
-        console.log("You win, scissors beats paper");
-        return 1;
-    }
+    function playRound(){
+        
+        let playerSelection = prompt("Please enter your name", "Harry Potter");
+        let getComputerSelection = getComputerChoice().toLowerCase();
 
-    if (playerSelection == "paper" && getComputerSelection == "scissors"){
-        console.log("You lose, scissors beats paper");
-        return 0;
-    }
-
-    return "Tie!"
-};
-
-function game(){
-
-    let humanCounter = 0;
-    let computerCounter = 0;
-    
-    for (let i = 0; i < 5; i++) {
-        let match = playRound();
-    
-        console.log(match);
-        if(match == 1){
-            humanCounter += 1;
+        if (playerSelection == "rock" && getComputerSelection == "scissors"){
+            console.log("You win, rock beats scissors");
+            return 1;
         }
         
-        if(match == 0){
-            computerCounter += 1;
+        if (playerSelection == "scissors" && getComputerSelection == "rock"){
+            console.log("You lose, rock beats scissors");
+            return 0;
         }
-    }
 
-    if(humanCounter > computerCounter){
-        return "You win the battle :D";
-    }
+        if (playerSelection == "paper" && getComputerSelection == "rock"){
+            console.log("You win, paper beats rock");
+            return 1;
+        }
 
-    if( computerCounter > humanCounter){
-        return "You lose the battle :(";
-    }
+        if (playerSelection == "rock" && getComputerSelection == "paper"){
+            console.log("You lose, paper beats rock");
+            return 0;
+        }
 
-    return "Tie!"
-}
-    
-console.log(game());
+        if (playerSelection == "scissors" && getComputerSelection == "paper"){
+            console.log("You win, scissors beats paper");
+            return 1;
+        }
 
+        if (playerSelection == "paper" && getComputerSelection == "scissors"){
+            console.log("You lose, scissors beats paper");
+            return 0;
+        }
+
+        return "Tie!"
+    };
+
+    /*
+    function game(){
+
+        let humanCounter = 0;
+        let computerCounter = 0;
+        
+        for (let i = 0; i < 5; i++) {
+            let match = playRound();
+        
+            console.log(match);
+            if(match == 1){
+                humanCounter += 1;
+            }
             
-</script>
+            if(match == 0){
+                computerCounter += 1;
+            }
+        }
+
+        if(humanCounter > computerCounter){
+            return "You win the battle :D";
+        }
+
+        if( computerCounter > humanCounter){
+            return "You lose the battle :(";
+        }
+
+        return "Tie!"
+    }
+       
+    console.log(game());
+    */
+                
+    </script>
 </body>
 </html>
